@@ -16,11 +16,11 @@ class App extends React.Component{
     }
   handleClick(event) {
     event.preventDefault();
-    const name = event.target.citylocation.value;
-    if (name) {
+    const city = event.target.citylocation.value;
+    if (city) {
       axios
         .get(
-          `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${name}`
+          `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${city}`
         )
         .then(data => {
           const woeid = data.data[0].woeid;
